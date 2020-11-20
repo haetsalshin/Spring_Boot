@@ -9,7 +9,6 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-
 @Entity
 @Table(name="tbl_book")
 /**/
@@ -32,7 +31,9 @@ public class BookVO {
     @Column(length = 125)
     private String comp;
 
-
+/*원래 int형은 null값을 허용하지 않는데 @Column에 nullable=true로 하면
+* 널 값을 허용하게 테이블을 만든다*/
+    @Column(nullable = true)
     private int price;
 
 }
